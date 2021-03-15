@@ -56,7 +56,7 @@ defmodule PentoWeb.WrongLive do
         <a href="#" phx-click="guess" phx-value-number="<%= n %>"><%= n %></a>
       <% end %>
       <%= if @status=="win" do %>
-      <%= live_patch to: "/guess", replace: true do %>
+      <%= live_patch to: live_path(@socket, __MODULE__), replace: true do %>
         <button>Try again!</button>
         <% end %>
       <% end %>
